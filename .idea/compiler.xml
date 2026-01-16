@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="EjerciciosDiapositivas" />
         <module name="EjerciciosVictorClase" />
+        <module name="Agenda" />
       </profile>
     </annotationProcessing>
   </component>
