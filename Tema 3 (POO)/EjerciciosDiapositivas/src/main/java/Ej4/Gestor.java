@@ -18,4 +18,8 @@ public class Gestor {
     public String getTelefono () {
         return  this.telefono;
     }
+
+    public String getNombre () {
+        return this.nombre;
+    }
 }
