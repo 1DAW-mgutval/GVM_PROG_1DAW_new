@@ -13,6 +13,11 @@ public class Restaurante {
         this.listaEmpleados = listaEmpleados;
     }
 
+    public Restaurante () {
+        this.listaPlatos = new Plato[0];
+        this.listaEmpleados = new Empleado[0];
+    }
+
     public void anadirPlato (Plato platoNuevo) {
         this.listaPlatos = Arrays.copyOf(this.listaPlatos, this.listaPlatos.length+1);
         this.listaPlatos[this.listaPlatos.length-1] = platoNuevo;
@@ -48,7 +53,7 @@ public class Restaurante {
 
     public void mostrarPlatos () {
         for (int i = 0; i < listaPlatos.length; i++) {
-            System.out.println("Plato nº "+i+": "+listaPlatos[i].getNombre());
+            System.out.println("Plato nº "+(i+1)+": "+listaPlatos[i].getNombre());
         }
     }
 
@@ -58,6 +63,10 @@ public class Restaurante {
         }
     }
 
-
+    public void mostrarListaEmpleados () {
+        for (int i = 0; i < listaEmpleados.length; i++) {
+            listaEmpleados[i].mostrarDatos();
+        }
+    }
 
 }

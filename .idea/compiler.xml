@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="EjerciciosVictorClase" />
+        <module name="Entregable_23-24" />
         <module name="Agenda" />
         <module name="EjerciciosDiapositivas" />
         <module name="PracticaEntregable_2425" />

@@ -41,7 +41,7 @@ public class Empleado {
         return id;
     }
 
-    public static int getIdEmpleados() {
+    public static int empleadosTotal() {
         return idEmpleados;
     }
 }
