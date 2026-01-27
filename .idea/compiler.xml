@@ -6,10 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="EjerciciosDiapositivas" />
         <module name="EjerciciosVictorClase" />
         <module name="Agenda" />
+        <module name="EjerciciosDiapositivas" />
+        <module name="PracticaEntregable_2425" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Practica_Entregable_2425" target="20" />
+    </bytecodeTargetLevel>
   </component>
 </project>
