@@ -1,5 +1,6 @@
 package Ejercicio1;
 
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 
 public class Catalogo {
@@ -24,10 +25,51 @@ public class Catalogo {
     }
 
     public void listarPeliculas() {
-
+        if (this.listaPeliculas.length == 0) {
+            System.out.println("Ninguna película añadida al catálogo.");
+        } else {
+            for (int i = 0; i < listaPeliculas.length; i++) {
+                System.out.println("Película #"+(i+1)+":");
+                System.out.println("Título: "+listaPeliculas[i].getTitulo());
+                System.out.println("Director: "+listaPeliculas[i].getDirector());
+                System.out.println("Año de lanzamiento: "+listaPeliculas[i].getAnoLanzamiento().format(DateTimeFormatter.ofPattern("yyyy")));
+                System.out.println("Género: "+listaPeliculas[i].getGenero()+"\n");
+            }
+        }
     }
 
     public Pelicula[] buscarPeliculas(String cadenaABuscar, String campo) {
+        Pelicula[] resultado = new Pelicula[0];
 
+        if (campo.equalsIgnoreCase("dir")) {
+            for (int i = 0; i < this.listaPeliculas.length; i++) {
+                if (this.listaPeliculas[i].getDirector().toLowerCase().contains(cadenaABuscar.toLowerCase())) {
+                    resultado = Arrays.copyOf(resultado, resultado.length+1);
+                    resultado[resultado.length-1] = this.listaPeliculas[i];
+                }
+            }
+        } else if (campo.equalsIgnoreCase("tit")) {
+            for (int i = 0; i < this.listaPeliculas.length; i++) {
+                if (this.listaPeliculas[i].getTitulo().toLowerCase().contains(cadenaABuscar.toLowerCase())) {
+                    resultado = Arrays.copyOf(resultado, resultado.length+1);
+                    resultado[resultado.length-1] = this.listaPeliculas[i];
+                }
+            }
+        } else if (campo.equalsIgnoreCase("gen")) {
+            for (int i = 0; i < this.listaPeliculas.length; i++) {
+                if (this.listaPeliculas[i].getGenero().toLowerCase().contains(cadenaABuscar.toLowerCase())) {
+                    resultado = Arrays.copyOf(resultado, resultado.length+1);
+                    resultado[resultado.length-1] = this.listaPeliculas[i];
+                }
+            }
+        } else if (campo.equalsIgnoreCase("año")){
+            for (int i = 0; i < this.listaPeliculas.length; i++) {
+                if (Integer.valueOf(this.listaPeliculas[i].getAnoLanzamiento().getYear()).equals(Integer.valueOf(cadenaABuscar))) {
+                    resultado = Arrays.copyOf(resultado, resultado.length+1);
+                    resultado[resultado.length-1] = this.listaPeliculas[i];
+                }
+            }
+        }
+        return resultado;
     }
 }

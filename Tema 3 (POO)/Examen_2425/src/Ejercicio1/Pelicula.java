@@ -34,4 +34,20 @@ public class Pelicula {
             this.genero += "/"+genero;
         }
     }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public String getDirector() {
+        return director;
+    }
+
+    public LocalDate getAnoLanzamiento() {
+        return anoLanzamiento;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
 }
